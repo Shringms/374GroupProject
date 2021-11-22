@@ -5,19 +5,50 @@ import java.util.*;
 
 public class AlgoProject{
     Node benton_hall = new Node("Benton Hall"),
+            withrow_hall = new Node("Withrow Hall"),
+            garden_commons = new Node("Garden Commons"),
+            fsb = new Node("Farmer School of Business"),
+            bachelor_hall = new Node("Bachelor Hall"),
+            hughes_hall = new Node("Hughes Hall"),
             armstrong = new Node("Armstrong"),
             bell_tower = new Node("Bell Tower"),
             laws_hall = new Node("Laws Hall"),
             pearson_hall = new Node("Pearson Hall"),
-            harrison_hall = new Node("Harrison Hall");
-    Node[] nodes = new Node[]{benton_hall,armstrong,bell_tower,laws_hall,pearson_hall,harrison_hall};
+            irvin_hall = new Node("Irvin Hall"),
+            harrison_hall = new Node("Harrison Hall"),
+            rec_center = new Node("Rec Center");
+            maplestreet_commons = new Node("Maple Street Commons");
+    Node[] nodes = new Node[]{benton_hall,withrow_hall,garden_commons,fsb,bachelor_hall,hughes_hall,armstrong,bell_tower,laws_hall,pearson_hall,irvin_hall,harrison_hall,rec_center,maplestreet_commons};
     Queue<Node> courses = new PriorityQueue<>(Arrays.asList(nodes));
 
-    Edge e1 = new Edge(benton_hall,bell_tower,10),
-         e2 = new Edge(bell_tower,armstrong,15),
-         e3 = new Edge(benton_hall,laws_hall,5),
-         e4 = new Edge(laws_hall,armstrong,15);
-    Edge[] edges = new Edge[]{e1,e2,e3,e4};
+    Edge e1 = new Edge(benton_hall,bell_tower,3),
+         e2 = new Edge(benton_hall,withrow_hall,3),
+         e3 = new Edge(withrow_hall,garden_commons,5),
+         e4 = new Edge(benton_hall,garden_commons,6),
+         e5 = new Edge(garden_commons,fsb,3),
+         e6 = new Edge(fsb,bachelor_hall,5),
+         e7 = new Edge(bachelor_hall,hughes_hall,4),
+         e8 = new Edge(benton_hall,hughes_hall,2),
+         e9 = new Edge(benton_hall,pearson_hall,3),
+         e10 = new Edge(pearson_hall,fsb,2),
+         e11 = new Edge(benton_hall,laws_hall,2),
+         e12 = new Edge(laws_hall,armstrong,5),
+         e13 = new Edge(laws_hall,hughes_hall,1)
+         e14 = new Edge(laws_hall,bell_tower,4)
+         e15 = new Edge(bell_tower,armstrong,3),
+         e16 = new Edge(hughes_hall,armstrong,3),
+         e17 = new Edge(armstrong,bachelor_hall,4),
+         e18 = new Edge(harrison_hall,bell_tower,6),
+         e19 = new Edge(harrison_hall, armstrong,7),
+         e20 = new Edge(harrison_hall, irvin_hall,3),
+         e21 = new Edge(irvin_hall,bell_tower,5),
+         e22 = new Edge(irvin_hall,armstrong,5),
+         e23 = new Edge(irvin_hall,rec_center,5),
+         e24 = new Edge(rec_center,maplestreet_commons,5),
+         e25 = new Edge(maplestreet_commons, armstrong,5),
+         e26 = new Edge(maplestreet_commons, bachelors,6);
+         
+    Edge[] edges = new Edge[]{e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,e19,e20,e21,e22,e23,e24,e25,e26};
 
     Class intro_software = new Class("Intro to Software Engineering", benton_hall),
             evo_bio = new Class("Evolutionary Biology", pearson_hall),
